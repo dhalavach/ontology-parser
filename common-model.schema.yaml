@@ -1,0 +1,814 @@
+name: common-model
+id: common-model
+imports:
+- linkml:types
+prefixes:
+  linkml: https://w3id.org/linkml/
+  common-model: https://example.org/common-model/
+default_prefix: common-model
+default_range: string
+slots:
+  id:
+    from_schema: common-model
+    identifier: true
+    required: true
+    multivalued: false
+  iri:
+    from_schema: common-model
+    required: true
+    multivalued: false
+  type:
+    from_schema: common-model
+    required: false
+    multivalued: false
+  category:
+    from_schema: common-model
+    required: true
+    multivalued: false
+  name:
+    from_schema: common-model
+    required: true
+    multivalued: false
+  description:
+    from_schema: common-model
+    required: false
+    multivalued: false
+  equipment type:
+    from_schema: common-model
+  pid node:
+    from_schema: common-model
+  has equipment:
+    from_schema: common-model
+  has sensor:
+    from_schema: common-model
+  has speed:
+    from_schema: common-model
+  has compressor discharge temperature:
+    from_schema: common-model
+  has compressor inlet flow:
+    from_schema: common-model
+  has vibration sensor turbine 1 brg:
+    from_schema: common-model
+  has_bearing_metal_temp_generator_bearing:
+    from_schema: common-model
+  has_compressor_inlet_pressure:
+    from_schema: common-model
+  has_specific_humidity:
+    from_schema: common-model
+  has_compressor_inlet_temperature:
+    from_schema: common-model
+  has_turbine_temperature_wheelspace:
+    from_schema: common-model
+  has_igv_angle:
+    from_schema: common-model
+  has_mw_output:
+    from_schema: common-model
+  has_air_inlet_duct_temperature:
+    from_schema: common-model
+  has_compressor_discharge_press:
+    from_schema: common-model
+  has_turbine_inlet diff_pressure:
+    from_schema: common-model
+  has_bellouth_inlet_pressure:
+    from_schema: common-model
+  has_fuel_stroke_reference:
+    from_schema: common-model
+  has_compressor_pressure_ratio:
+    from_schema: common-model
+  has_exhaust_temp:
+    from_schema: common-model
+  has_chiller_status:
+    from_schema: common-model
+  has_gas_fuel_flow:
+    from_schema: common-model
+  has_temperature_control_fuel_stroke_reference:
+    from_schema: common-model
+  has_inlet_pressure:
+    from_schema: common-model
+  has_hot_well_temperature:
+    from_schema: common-model
+  has_inlet_temperature:
+    from_schema: common-model
+  has_inlet_flow:
+    from_schema: common-model
+  has_oulet_pressure:
+    from_schema: common-model
+  has_oulet_temperature:
+    from_schema: common-model
+  has_exhaust_pressure:
+    from_schema: common-model
+  has_exhaust_temperature:
+    from_schema: common-model
+  has_brg_vibration:
+    from_schema: common-model
+  has crh flow:
+    from_schema: common-model
+  has crh temp:
+    from_schema: common-model
+  has crh press:
+    from_schema: common-model
+  has hrh press:
+    from_schema: common-model
+  has hrh temp:
+    from_schema: common-model
+  has hrh flow:
+    from_schema: common-model
+  has hp press:
+    from_schema: common-model
+  has hp temp:
+    from_schema: common-model
+  has ip flow:
+    from_schema: common-model
+  has ip press:
+    from_schema: common-model
+  has ip temp:
+    from_schema: common-model
+  has lp flow:
+    from_schema: common-model
+  has lp temp:
+    from_schema: common-model
+  has hp drum press:
+    from_schema: common-model
+  has lp drum press:
+    from_schema: common-model
+  has ip drum press:
+    from_schema: common-model
+  has hp sh temp:
+    from_schema: common-model
+  has ip sh temp:
+    from_schema: common-model
+  has lp sh temp:
+    from_schema: common-model
+  has db fuel flow:
+    from_schema: common-model
+  has condenser vacuum:
+    from_schema: common-model
+  has hot well temperature:
+    from_schema: common-model
+  has condenser cooling water inlet temperature:
+    from_schema: common-model
+  has condenser cooling water outlet temperature:
+    from_schema: common-model
+  has ct fan status:
+    from_schema: common-model
+  has ct water in temperature:
+    from_schema: common-model
+  has ct water out temperature:
+    from_schema: common-model
+  has cooling water makeup rate:
+    from_schema: common-model
+  uom:
+    from_schema: common-model
+  source:
+    from_schema: common-model
+  has facility:
+    from_schema: common-model
+  facility type:
+    from_schema: common-model
+  has plant:
+    from_schema: common-model
+  has system:
+    from_schema: common-model
+  plant type:
+    from_schema: common-model
+  has measurement:
+    from_schema: common-model
+classes:
+  equipment:
+    from_schema: common-model
+    slots:
+    - id
+    - iri
+    - name
+    - description
+    - equipment type
+    - pid node
+    - has equipment
+    - has sensor
+    slot_usage:
+      id: {}
+      iri: {}
+      name: {}
+      description: {}
+      equipment type: {}
+      pid node: {}
+      has equipment:
+        description: child equipment
+        range: equipment
+      has sensor:
+        description: equipment tag
+        range: pi tag
+  rotating:
+    from_schema: common-model
+    is_a: equipment
+    slots:
+    - has speed
+    slot_usage:
+      has speed:
+        description: Speed
+        range: pi tag
+  mechanical:
+    from_schema: common-model
+    is_a: equipment
+  electrical:
+    from_schema: common-model
+    is_a: equipment
+  safety and control:
+    from_schema: common-model
+    is_a: equipment
+  subsea:
+    from_schema: common-model
+    is_a: equipment
+  blowers and fans:
+    from_schema: common-model
+    is_a: rotating
+  centrifuges:
+    from_schema: common-model
+    is_a: rotating
+  combustion engines:
+    from_schema: common-model
+    is_a: rotating
+  compressors:
+    from_schema: common-model
+    is_a: rotating
+  gas turbines:
+    from_schema: common-model
+    is_a: rotating
+    slots:
+    - has compressor discharge temperature
+    - has compressor inlet flow
+    - has vibration sensor turbine 1 brg
+    - has_bearing_metal_temp_generator_bearing
+    - has_compressor_inlet_pressure
+    - has_specific_humidity
+    - has_compressor_inlet_temperature
+    - has_turbine_temperature_wheelspace
+    - has_igv_angle
+    - has_mw_output
+    - has_air_inlet_duct_temperature
+    - has_compressor_discharge_press
+    - has_turbine_inlet diff_pressure
+    - has_bellouth_inlet_pressure
+    - has_fuel_stroke_reference
+    - has_compressor_pressure_ratio
+    - has_exhaust_temp
+    - has_chiller_status
+    - has_gas_fuel_flow
+    - has_temperature_control_fuel_stroke_reference
+    slot_usage:
+      has compressor discharge temperature:
+        description: Compressor Discharge Temperature
+        range: pi tag
+      has compressor inlet flow:
+        description: Compressor Inlet Air Mass Flow
+        range: pi tag
+      has vibration sensor turbine 1 brg:
+        description: Vibration Sensor Turbine 1 Brg
+        range: pi tag
+      has_bearing_metal_temp_generator_bearing:
+        description: Bearing Metal Temp Generator Bearing
+        range: pi tag
+      has_compressor_inlet_pressure:
+        description: Compressor Inlet Pressure
+        range: pi tag
+      has_specific_humidity:
+        description: Specific Humidity
+        range: pi tag
+      has_compressor_inlet_temperature:
+        description: Compressor Inlet Temperature
+        range: pi tag
+      has_turbine_temperature_wheelspace:
+        description: Turbine Temperature Wheelspace
+        range: pi tag
+      has_igv_angle:
+        description: IGV angle
+        range: pi tag
+      has_mw_output:
+        description: Generator MWatts
+        range: pi tag
+      has_air_inlet_duct_temperature:
+        description: Air Inlet Duct Temperature
+        range: pi tag
+      has_compressor_discharge_press:
+        description: Compressor Discharge Press
+        range: pi tag
+      has_turbine_inlet diff_pressure:
+        description: Turbine Inlet Diff Pressure
+        range: pi tag
+      has_bellouth_inlet_pressure:
+        description: BellMouth Inlet Pressure
+        range: pi tag
+      has_fuel_stroke_reference:
+        description: Fuel Stroke Reference
+        range: pi tag
+      has_compressor_pressure_ratio:
+        description: Compressor Pressure Ratio
+        range: pi tag
+      has_exhaust_temp:
+        description: Exhaust Temp
+        range: pi tag
+      has_chiller_status:
+        description: Chiller Status
+        range: pi tag
+      has_gas_fuel_flow:
+        description: Gas Fuel Flow
+        range: pi tag
+      has_temperature_control_fuel_stroke_reference:
+        description: Temperature Control Fuel Stroke Reference
+        range: pi tag
+  pumps:
+    from_schema: common-model
+    is_a: rotating
+  electric generators:
+    from_schema: common-model
+    is_a: rotating
+  electric motors:
+    from_schema: common-model
+    is_a: rotating
+  liquid expanders:
+    from_schema: common-model
+    is_a: rotating
+  mixers:
+    from_schema: common-model
+    is_a: rotating
+  steam turbines:
+    from_schema: common-model
+    is_a: rotating
+    slots:
+    - has_inlet_pressure
+    - has_hot_well_temperature
+    - has_mw_output
+    - has_inlet_temperature
+    - has_inlet_flow
+    - has_oulet_pressure
+    - has_oulet_temperature
+    - has_exhaust_pressure
+    - has_exhaust_temperature
+    - has_brg_vibration
+    slot_usage:
+      has_inlet_pressure:
+        range: pi tag
+      has_hot_well_temperature:
+        range: pi tag
+      has_mw_output:
+        range: pi tag
+      has_inlet_temperature:
+        range: pi tag
+      has_inlet_flow:
+        range: pi tag
+      has_oulet_pressure:
+        range: pi tag
+      has_oulet_temperature:
+        range: pi tag
+      has_exhaust_pressure:
+        range: pi tag
+      has_exhaust_temperature:
+        range: pi tag
+      has_brg_vibration:
+        range: pi tag
+  turboexpanders:
+    from_schema: common-model
+    is_a: rotating
+  conveyors and elevators:
+    from_schema: common-model
+    is_a: mechanical
+  cranes:
+    from_schema: common-model
+    is_a: mechanical
+  filters and strainers:
+    from_schema: common-model
+    is_a: mechanical
+  heat exchangers:
+    from_schema: common-model
+    is_a: mechanical
+  heaters and boilers:
+    from_schema: common-model
+    is_a: mechanical
+  loading arms:
+    from_schema: common-model
+    is_a: mechanical
+  onshore pipelines:
+    from_schema: common-model
+    is_a: mechanical
+  piping:
+    from_schema: common-model
+    is_a: mechanical
+  pressure vessels:
+    from_schema: common-model
+    is_a: mechanical
+  silos:
+    from_schema: common-model
+    is_a: mechanical
+  steam ejectors:
+    from_schema: common-model
+    is_a: mechanical
+  storage tanks:
+    from_schema: common-model
+    is_a: mechanical
+  swivels:
+    from_schema: common-model
+    is_a: mechanical
+  turrets:
+    from_schema: common-model
+    is_a: mechanical
+  winches:
+    from_schema: common-model
+    is_a: mechanical
+  heat recycling steam generators:
+    from_schema: common-model
+    is_a: mechanical
+    slots:
+    - has crh flow
+    - has crh temp
+    - has crh press
+    - has hrh press
+    - has hrh temp
+    - has hrh flow
+    - has hp press
+    - has hp temp
+    - has ip flow
+    - has ip press
+    - has ip temp
+    - has lp flow
+    - has lp temp
+    - has hp drum press
+    - has lp drum press
+    - has ip drum press
+    - has hp sh temp
+    - has ip sh temp
+    - has lp sh temp
+    - has db fuel flow
+    slot_usage:
+      has crh flow:
+        description: cold reheat flow
+        range: pi tag
+      has crh temp:
+        description: cold reheat temp
+        range: pi tag
+      has crh press:
+        description: cold reheat pressure
+        range: pi tag
+      has hrh press:
+        description: hot reheat pressure
+        range: pi tag
+      has hrh temp:
+        description: hot reheat temp
+        range: pi tag
+      has hrh flow:
+        description: hot reheat flow
+        range: pi tag
+      has hp press:
+        description: hp pressure
+        range: pi tag
+      has hp temp:
+        description: hp temp
+        range: pi tag
+      has ip flow:
+        description: ip flow
+        range: pi tag
+      has ip press:
+        description: ip pressure
+        range: pi tag
+      has ip temp:
+        description: ip temp
+        range: pi tag
+      has lp flow:
+        description: lp flow
+        range: pi tag
+      has lp temp:
+        description: lp temp
+        range: pi tag
+      has hp drum press:
+        description: HP drum pressure
+        range: pi tag
+      has lp drum press:
+        description: LP drum pressure
+        range: pi tag
+      has ip drum press:
+        description: IP drum pressure
+        range: pi tag
+      has hp sh temp:
+        description: HP superheat temp
+        range: pi tag
+      has ip sh temp:
+        description: IP superheat temp
+        range: pi tag
+      has lp sh temp:
+        description: LP superheat temp
+        range: pi tag
+      has db fuel flow:
+        description: Duct burner fuel flow
+        range: pi tag
+  condensors:
+    from_schema: common-model
+    is_a: mechanical
+    slots:
+    - has condenser vacuum
+    - has hot well temperature
+    - has condenser cooling water inlet temperature
+    - has condenser cooling water outlet temperature
+    slot_usage:
+      has condenser vacuum:
+        description: condenser vacuum
+        range: pi tag
+      has hot well temperature:
+        description: hot well temp
+        range: pi tag
+      has condenser cooling water inlet temperature:
+        description: condenser cooling water inlet temperature
+        range: pi tag
+      has condenser cooling water outlet temperature:
+        description: condenser cooling water outlet temperature
+        range: pi tag
+  cooling towers:
+    from_schema: common-model
+    is_a: mechanical
+    slots:
+    - has ct fan status
+    - has ct water in temperature
+    - has ct water out temperature
+    - has cooling water makeup rate
+    slot_usage:
+      has ct fan status:
+        description: cooling tower fan status
+        range: pi tag
+      has ct water in temperature:
+        description: cooling tower water in temperature
+        range: pi tag
+      has ct water out temperature:
+        description: cooling tower water out temperature
+        range: pi tag
+      has cooling water makeup rate:
+        description: cooling  water makeup rate
+        range: pi tag
+  frequency converters:
+    from_schema: common-model
+    is_a: electrical
+  power cables and terminations:
+    from_schema: common-model
+    is_a: electrical
+  power transformers:
+    from_schema: common-model
+    is_a: electrical
+  switchgear:
+    from_schema: common-model
+    is_a: electrical
+  power supply:
+    from_schema: common-model
+    is_a: electrical
+  control logic units:
+    from_schema: common-model
+    is_a: safety and control
+  communication equipment:
+    from_schema: common-model
+    is_a: safety and control
+  fire and gas detectors:
+    from_schema: common-model
+    is_a: safety and control
+  fire-fighting equipment:
+    from_schema: common-model
+    is_a: safety and control
+  flare ignition:
+    from_schema: common-model
+    is_a: safety and control
+  nozzles:
+    from_schema: common-model
+    is_a: safety and control
+  valves:
+    from_schema: common-model
+    is_a: safety and control
+  dry tree risers:
+    from_schema: common-model
+    is_a: subsea
+  risers:
+    from_schema: common-model
+    is_a: subsea
+  subsea compressors:
+    from_schema: common-model
+    is_a: subsea
+  subsea electrical power distribution:
+    from_schema: common-model
+    is_a: subsea
+  subsea flowlines:
+    from_schema: common-model
+    is_a: subsea
+  subsea heat exchangers:
+    from_schema: common-model
+    is_a: subsea
+  subsea manifolds:
+    from_schema: common-model
+    is_a: subsea
+  subsea pipelines:
+    from_schema: common-model
+    is_a: subsea
+  submarine power cables:
+    from_schema: common-model
+    is_a: subsea
+  subsea pressure vessels:
+    from_schema: common-model
+    is_a: subsea
+  subsea production control:
+    from_schema: common-model
+    is_a: subsea
+  subsea pumps:
+    from_schema: common-model
+    is_a: subsea
+  subsea wellhead and x-mas trees:
+    from_schema: common-model
+    is_a: subsea
+  diesel engine:
+    from_schema: common-model
+    is_a: combustion engines
+  gasoline engine:
+    from_schema: common-model
+    is_a: combustion engines
+  natural gas engine:
+    from_schema: common-model
+    is_a: combustion engines
+  centrifugal:
+    from_schema: common-model
+    is_a: compressors
+  reciprocating:
+    from_schema: common-model
+    is_a: compressors
+  screw:
+    from_schema: common-model
+    is_a: compressors
+  industrial:
+    from_schema: common-model
+    is_a: gas turbines
+  heavy duty:
+    from_schema: common-model
+    is_a: gas turbines
+  aero-derivative:
+    from_schema: common-model
+    is_a: gas turbines
+  axial:
+    from_schema: common-model
+    is_a: pumps
+  gas-turbine driven:
+    from_schema: common-model
+    is_a: electric generators
+  steam-turbine driven:
+    from_schema: common-model
+    is_a: electric generators
+  turboexpander:
+    from_schema: common-model
+    is_a: electric generators
+  combustion-engine driven:
+    from_schema: common-model
+    is_a: electric generators
+  alternating current:
+    from_schema: common-model
+    is_a: electric motors
+  direct current:
+    from_schema: common-model
+    is_a: electric motors
+  multi-stage:
+    from_schema: common-model
+    is_a: steam turbines
+  single-stage:
+    from_schema: common-model
+    is_a: steam turbines
+  super critical:
+    from_schema: common-model
+    is_a: steam turbines
+  shell and tube:
+    from_schema: common-model
+    is_a: heat exchangers
+  plate:
+    from_schema: common-model
+    is_a: heat exchangers
+  plate fin:
+    from_schema: common-model
+    is_a: heat exchangers
+  double pipe:
+    from_schema: common-model
+    is_a: heat exchangers
+  bayonet:
+    from_schema: common-model
+    is_a: heat exchangers
+  printed circuit:
+    from_schema: common-model
+    is_a: heat exchangers
+  air-cooled:
+    from_schema: common-model
+    is_a: heat exchangers
+  spiral:
+    from_schema: common-model
+    is_a: heat exchangers
+  sprial-wound:
+    from_schema: common-model
+    is_a: heat exchangers
+  direct-fired heater:
+    from_schema: common-model
+    is_a: heaters and boilers
+  electric heater:
+    from_schema: common-model
+    is_a: heaters and boilers
+  indirect hc-fired heater:
+    from_schema: common-model
+    is_a: heaters and boilers
+  heater treater:
+    from_schema: common-model
+    is_a: heaters and boilers
+  non-hc-fired boiler:
+    from_schema: common-model
+    is_a: heaters and boilers
+  electric boiler:
+    from_schema: common-model
+    is_a: heaters and boilers
+  hc-fired boiler:
+    from_schema: common-model
+    is_a: heaters and boilers
+  measurement:
+    description: Sensors metadata
+    from_schema: common-model
+  pi tag:
+    description: PI tag metadata
+    from_schema: common-model
+    is_a: measurement
+    slots:
+    - name
+    - description
+    - uom
+    - source
+    slot_usage:
+      name: {}
+      description: {}
+      uom: {}
+      source: {}
+  location:
+    from_schema: common-model
+    slots:
+    - name
+    - description
+    slot_usage:
+      name: {}
+      description: {}
+  business unit:
+    description: This is the Business Unit as part of a location hierarchy
+    from_schema: common-model
+    is_a: location
+    slots:
+    - has facility
+    slot_usage:
+      has facility:
+        range: facility
+  facility:
+    description: his is the facility like a power plant or refinery
+    from_schema: common-model
+    is_a: location
+    slots:
+    - facility type
+    - has plant
+    - has system
+    slot_usage:
+      facility type: {}
+      has plant:
+        range: plant
+        required: false
+        multivalued: true
+      has system:
+        range: system
+        required: false
+        multivalued: true
+  plant:
+    description: This is a plant that is part of a facility like a power block or
+      cogen plant inside a refinery
+    from_schema: common-model
+    is_a: location
+    slots:
+    - plant type
+    - has system
+    - has equipment
+    - has measurement
+    slot_usage:
+      plant type: {}
+      has system:
+        range: system
+        required: false
+        multivalued: true
+      has equipment:
+        range: equipment
+        required: false
+        multivalued: true
+      has measurement:
+        range: pi tag
+        required: false
+        multivalued: true
+  system:
+    from_schema: common-model
+    is_a: location
+    slots:
+    - has equipment
+    - has measurement
+    slot_usage:
+      has equipment:
+        range: equipment
+        required: false
+        multivalued: true
+      has measurement:
+        range: pi tag
+        required: false
+        multivalued: true
